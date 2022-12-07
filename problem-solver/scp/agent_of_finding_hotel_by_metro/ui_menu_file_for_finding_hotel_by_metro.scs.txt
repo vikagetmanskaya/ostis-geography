@@ -1,0 +1,34 @@
+ui_menu_file_for_finding_hotel_by_metro <- ui_user_command_class_atom; ui_user_command_class_view_kb; ui_one_argument_command_class;;
+
+ui_menu_file_for_finding_hotel_by_metro
+=> nrel_main_idtf: 
+	[Какие отели соответствуют указанной станции метро?] 
+	(* <- lang_ru;; *);
+=> nrel_idtf: 
+	[Запрос всех отелей с указанной станцией метро.] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_hotel_by_metro
+=> nrel_main_idtf: 
+	[Which hotels correspond to the metro station?] 
+	(* <- lang_en;; *);
+=> nrel_idtf: 
+	[Request all hotels from the metro station.] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_finding_hotel_by_metro => ui_nrel_command_template:
+	[*
+		action_of_finding_hotel_by_metro _-> ._action_of_finding_hotel_by_metro
+			(*
+			_-> rrel_1:: ui_arg_1;;			
+			*);;
+		._action_of_finding_hotel_by_metro _<- question;;
+	*];;
+
+ui_menu_file_for_finding_hotel_by_metro => ui_nrel_command_lang_template: 
+	[Какие отели соответствуют станции метро $ui_arg_1 ?] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_hotel_by_metro => ui_nrel_command_lang_template: 
+	[What hotel from the $ ui_arg_1 ?] 
+	(* <- lang_en;; *);;
